@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" role="img" aria-label="redoscan — find ReDoS-vulnerable regexes, and prove it">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#140506"/><stop offset="0.55" stop-color="#0b0b0c"/><stop offset="1" stop-color="#1b0506"/>
+    </linearGradient>
+    <linearGradient id="word" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ffffff"/><stop offset="0.55" stop-color="#ffb3b3"/><stop offset="1" stop-color="#ff2d2d"/>
+    </linearGradient>
+    <linearGradient id="scan" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ff2d2d" stop-opacity="0"/><stop offset="0.5" stop-color="#ff2d2d"/><stop offset="1" stop-color="#ff2d2d" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.2" cy="0.2" r="0.8">
+      <stop offset="0" stop-color="#ff0000" stop-opacity="0.28"/><stop offset="1" stop-color="#ff0000" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse">
+      <path d="M36 0H0V36" fill="none" stroke="#ffffff" stroke-opacity="0.045" stroke-width="1"/>
+    </pattern>
+    <clipPath id="round"><rect width="1200" height="300" rx="18"/></clipPath>
+  </defs>
+  <g clip-path="url(#round)">
+    <rect width="1200" height="300" fill="url(#bg)"/>
+    <rect width="1200" height="300" fill="url(#grid)"/>
+    <rect width="1200" height="300" fill="url(#glow)"/>
+    <!-- moving scan line -->
+    <rect x="0" y="0" width="1200" height="2" fill="url(#scan)" opacity="0.9">
+      <animate attributeName="y" values="0;298;0" dur="6s" repeatCount="indefinite"/>
+    </rect>
+    <!-- regex "noise" drifting in the background -->
+    <g font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="15" fill="#ff4d4d" opacity="0.16">
+      <text x="760" y="70">^(a+)+$</text>
+      <text x="930" y="118">(.*a){20}</text>
+      <text x="820" y="176">([a-z]+)*@</text>
+      <text x="1010" y="232">(a|aa)+$</text>
+      <text x="720" y="250">\d+\d+\d+</text>
+      <animateTransform attributeName="transform" type="translate" values="0 0; -14 0; 0 0" dur="9s" repeatCount="indefinite"/>
+    </g>
+    <!-- logo -->
+    <g transform="translate(72 82) scale(5.8)">
+      <rect width="26" height="26" rx="6" fill="#1D1D1D" stroke="#ffffff" stroke-opacity="0.08" stroke-width="0.3"/>
+      <path d="M13 4 L21 7.5 V13 C21 18 17.5 21.3 13 22.5 C8.5 21.3 5 18 5 13 V7.5 Z" stroke="#FF0000" stroke-width="1.4" fill="#ff0000" fill-opacity="0.08"/>
+      <path d="M10 13 L12 15 L16.5 10" stroke="#FF0000" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" fill="none">
+        <animate attributeName="stroke-opacity" values="1;0.35;1" dur="2.6s" repeatCount="indefinite"/>
+      </path>
+    </g>
+    <!-- text -->
+    <text x="256" y="152" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="82" font-weight="800" letter-spacing="-2" fill="url(#word)">redoscan</text>
+    <text x="260" y="196" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="23" fill="#b8b8c0">Find ReDoS-vulnerable regexes — and prove it.</text>
+    <g font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" fill="#d8d8de">
+      <rect x="260" y="218" width="64" height="26" rx="13" fill="none" stroke="#ff2d2d" stroke-opacity="0.7"/><text x="274" y="236" fill="#ff9d9d">v1.1.0</text>
+      <rect x="334" y="218" width="68" height="26" rx="13" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.15"/><text x="348" y="236">ReDoS</text>
+      <rect x="412" y="218" width="58" height="26" rx="13" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.15"/><text x="426" y="236">SQLi</text>
+      <rect x="480" y="218" width="62" height="26" rx="13" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.15"/><text x="493" y="236">CMDi</text>
+      <rect x="552" y="218" width="62" height="26" rx="13" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.15"/><text x="565" y="236">SSRF</text>
+      <rect x="624" y="218" width="58" height="26" rx="13" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.15"/><text x="637" y="236">IDOR</text>
+      <rect x="692" y="218" width="86" height="26" rx="13" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.15"/><text x="705" y="236">+ 7 more</text>
+    </g>
+  </g>
+  <rect x="0.5" y="0.5" width="1199" height="299" rx="18" fill="none" stroke="#ffffff" stroke-opacity="0.08"/>
+</svg>
